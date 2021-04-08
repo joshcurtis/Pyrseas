@@ -39,7 +39,7 @@ class LanguageToMapTestCase(DatabaseToMapTestCase):
             self.skipTest("plpython3 installation failed: %s" % e)
         m = self.to_map(["CREATE FUNCTION test103() RETURNS int AS "
                          "'return 1' LANGUAGE plpython3u"])
-        self.to_map(["DROP EXTENSION plpython3u CASCADE"])
+        self.to_map(["DROP LANGUAGE plpython3u CASCADE"])
         assert 'language plpython3u' in m
 
 
